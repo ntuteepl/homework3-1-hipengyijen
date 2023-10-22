@@ -14,7 +14,6 @@ int main(){
  int replay = 1,c5 = 0,replay_1 = 0;
  /*replay沒猜中繼續玩、repaly_1玩完了繼續嗎*/
 
-
     /*數字產生*/
     do
     {
