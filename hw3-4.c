@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
- 
+
 int main() {
     char answer[5];
     char guess[5];
@@ -36,10 +36,12 @@ int main() {
                 }
             }
         }
- 
+
         printf("%dA%dB\n", numA, numB);
         numAttempts++;
     }
+
+    printf("遊戲結束，共猜測 %d 次。\n", numAttempts);
 
     return 0;
 }
