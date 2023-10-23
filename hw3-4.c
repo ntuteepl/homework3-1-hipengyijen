@@ -1,109 +1,48 @@
+
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
-int main(){
 
-    char input[100];
-    char answer[4];
-    int r1=0,r2=0,same=0,temp=0;
-    /*亂數*/
-    int len= 0,c1 = 0,c2 = 0,c3 = 0,c4 = 0;
-    /*檢查輸入的數字*/
-  int i1 = 0,i2 = 0,i3 = 0,a = 0,b = 0;
-  /*數字位置跟值*/
-  int replay = 1,c5 = 0,replay_1 = 0;
-  /*replay沒猜中繼續玩、repaly_1玩完了繼續嗎*/
+int main() {
+    char answer[5];
+    char guess[5];
+    int numAttempts = 0;
 
+    printf("請輸入 4 位數字答案：");
+    scanf("%s", answer);
 
-    /*數字產生*/
-    do
-    {
-        for(r1=0;r1<=3;r1++)
-        {
-            do
-            {
-                    same=0;
-                    temp=rand()%10;
-                    answer[r1]=temp+'0';
-                    for(r2=0;r2<r1;r2++)
-                    {
-                        if(answer[r1]==answer[r2])
-                            same=1;
-                    }
-            }
-            while (same==1);
+    while (1) {
+        printf("請猜測 4 位數字（輸入 0 結束）：");
+        scanf("%s", guess);
+
+        if (strcmp(guess, "0") == 0) {
+            break;
         }
 
-    /*檢查玩家輸入*/
+        if (strlen(guess) != 4) {
+            printf("請輸入 4 位數字。\n");
+            continue;
+        }
 
-    do
-    {
-       a=0,b=0,replay=1;
+        int numA = 0;
+        int numB = 0;
 
-
-        scanf("%4s",input);
-      
-          for(int c3=0;c3<=3;c3++)
-            {
-                for(int c4=0;c4<c3;c4++)
-                {
-                    if(input[c3]==input[c4])
-                    {
-                        c1=1;
-                        c5=1;
-                        break;
+        for (int i = 0; i < 4; i++) {
+            if (guess[i] == answer[i]) {
+                numA++;
+            } else {
+                for (int j = 0; j < 4; j++) {
+                    if (i != j && guess[i] == answer[j]) {
+                        numB++;
                     }
                 }
             }
-            if(c5==1)
-            {
-                printf("數字重複!");
-            }
-
-/*檢查數字值跟位置*/
-        for(i1=0;i1<=3;i1++)
-        {
-            if(input[i1]==answer[i1])
-            {
-                a++;
-            }
         }
-        printf("%dA",a);
 
-
-        for(i2=0;i2<=3;i2++)
-        {
-            for(i3=0;i3<=3;i3++)
-            {
-                if(input[i2]==answer[i3]&&i2!=i3)
-                {
-                    b++;
-                }
-            }
-        }
-        printf("%dB\n",b++);
-
-        if(a==4)
-        {
-            
-          
-            scanf("%d",&replay_1);
-
-            if(replay_1>=1)
-            {
-                replay=0;
-            }
-            else
-            {
-                replay=0;
-            }
-        }
-        }
-     while(replay>=1);
+        printf("%dA%dB\n", numA, numB);
+        numAttempts++;
     }
-    while(replay_1>=1);
 
-        printf("\n程式結束...");
-        system("pause");
+    printf("遊戲結束，共猜測 %d 次。\n", numAttempts);
 
+    return 0;
 }
