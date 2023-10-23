@@ -36,7 +36,7 @@ int main() {
                 }
             }
         }
-
+ 
         printf("%dA%dB\n", numA, numB);
         numAttempts++;
     }
