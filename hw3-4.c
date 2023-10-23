@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
+ 
 int main() {
     char answer[5];
     char guess[5];
