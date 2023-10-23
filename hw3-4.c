@@ -6,9 +6,16 @@ int main(){
     char input[50];
     char answer[4];
     int r1=0,r2=0,same=0,temp=0;
+    /*亂數*/
     int len= 0,c1 = 0,c2 = 0,c3 = 0,c4 = 0;
-    int i1 = 0,i2 = 0,i3 = 0,a = 0,b = 0;
-    int replay = 1,c5 = 0,replay_1 = 0;
+    /*檢查輸入的數字*/
+  int i1 = 0,i2 = 0,i3 = 0,a = 0,b = 0;
+  /*數字位置跟值*/
+  int replay = 1,c5 = 0,replay_1 = 0;
+  /*replay沒猜中繼續玩、repaly_1玩完了繼續嗎*/
+
+
+    /*數字產生*/
     do
     {
         for(r1=0;r1<=3;r1++)
@@ -27,6 +34,7 @@ int main(){
             while (same==1);
         }
 
+    /*檢查玩家輸入*/
 
     do
     {
@@ -36,7 +44,7 @@ int main(){
         {
             c1=0,c5=0;
             printf("請輸入4位數字:");
-            gets(input);
+            scanf("%4s",input);
             len=strlen(input);
 
             if(len>4||len<4)
@@ -77,6 +85,8 @@ int main(){
         }
         while(c1==1);
 
+
+/*檢查數字值跟位置*/
         for(i1=0;i1<=3;i1++)
         {
             if(input[i1]==answer[i1])
@@ -122,5 +132,8 @@ int main(){
 
         printf("\n程式結束...");
         system("pause");
+
+
+
 
 }
