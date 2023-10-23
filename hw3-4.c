@@ -41,7 +41,5 @@ int main() {
         numAttempts++;
     }
 
-    printf("遊戲結束，共猜測 %d 次。\n", numAttempts);
-
     return 0;
 }
