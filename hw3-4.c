@@ -40,30 +40,12 @@ int main(){
     {
        a=0,b=0,replay=1;
 
-        do
-        {
-            c1=0,c5=0;
-            printf("請輸入4位數字:");
-            scanf("%4s",input);
-            len=strlen(input);
 
-            if(len>4||len<4)
+        scanf("%4s",input);
+      
+          for(int c3=0;c3<=3;c3++)
             {
-                printf("您輸入的不是4位數字!");
-                c1 = 1;
-            }
-            for(c2=0;c2<len;c2++)
-            {
-                if(input[c2]<48||input[c2]>57)
-                {
-                    printf("您輸入的非數字!");
-                    c1=1;
-                    break;
-                }
-            }
-            for(c3=0;c3<=3;c3++)
-            {
-                for(c4=0;c4<c3;c4++)
+                for(int c4=0;c4<c3;c4++)
                 {
                     if(input[c3]==input[c4])
                     {
@@ -77,14 +59,6 @@ int main(){
             {
                 printf("數字重複!");
             }
-            if(c1==1)
-            {
-                printf("請重新輸入...\n");
-            }
-
-        }
-        while(c1==1);
-
 
 /*檢查數字值跟位置*/
         for(i1=0;i1<=3;i1++)
@@ -124,7 +98,6 @@ int main(){
                 replay=0;
             }
         }
-
         }
      while(replay>=1);
     }
@@ -132,8 +105,5 @@ int main(){
 
         printf("\n程式結束...");
         system("pause");
-
-
-
 
 }
