@@ -3,7 +3,7 @@
 #include <stdlib.h>
 int main(){
 
-    char input[50];
+    char input[100];
     char answer[4];
     int r1=0,r2=0,same=0,temp=0;
     /*亂數*/
@@ -85,8 +85,8 @@ int main(){
 
         if(a==4)
         {
-            printf("您猜中了!\n");
-            printf("繼續遊玩?(0為結束，大於1為繼續)");
+            
+          
             scanf("%d",&replay_1);
 
             if(replay_1>=1)
